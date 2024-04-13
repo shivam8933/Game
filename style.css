@@ -109,3 +109,8 @@ h1 {
   display: none;
   visibility: hidden;
   }
+
+
+.winning-box {
+  background-color: green;
+}
