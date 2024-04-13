@@ -99,6 +99,7 @@ function checkWinner() {
 const showWinner = (winner) => {
   msg.innerText = `Congratulation Winner is ${winner}`;
   msg.classList.remove("hide");
+gameDiv.classList.remove("hide");
   newGame.classList.remove("hide");
   rstGame.classList.add("hide");
   for (const names of playerNames) {
