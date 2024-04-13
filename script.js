@@ -9,7 +9,7 @@ let playerNames = document.querySelectorAll(".playerNames");
 
 let turnO = true;
 
-let winningPattern = [
+const winningPattern = [
   [0, 1, 2],
   [0, 3, 6],
   [0, 4, 8],
@@ -25,6 +25,7 @@ const disabledBtn = () => {
     box.disabled = true;
   }
 };
+
 const enableBtn = () => {
   for (let box of boxes) {
     box.disabled = false;
@@ -43,6 +44,7 @@ const newGameBtn = () => {
     names.classList.remove("hide");
   }
 };
+
 const rstGameBtn = () => {
   enableBtn();
   msg.classList.add("hide");
@@ -51,10 +53,10 @@ const rstGameBtn = () => {
   rstGame.classList.remove("hide");
 };
 
-const turn = (firt) => {
-  if (firt && firt === "X") {
+const turn = (first) => {
+  if (first && first === "X") {
     turnO = false;
-  } else if (firt && firt === "O") {
+  } else if (first && first === "O") {
     turnO = true;
   }
 };
@@ -77,19 +79,19 @@ boxes.forEach((game_box) => {
 
 function checkWinner() {
   let isDraw = true;
-  for (pattern of winningPattern) {
+  for (let pattern of winningPattern) {
     let pos1Val = boxes[pattern[0]].innerText;
     let pos2Val = boxes[pattern[1]].innerText;
     let pos3Val = boxes[pattern[2]].innerText;
 
-    if (pos1Val != "" && pos2Val != "" && pos3Val != "") {
+    if (pos1Val !== "" && pos2Val !== "" && pos3Val !== "") {
       if (pos1Val === pos2Val && pos2Val === pos3Val) {
         showWinner(pos2Val);
         turn(pos1Val);
         return;
       }
     }
-    if (pos1Val == "" || pos2Val == "" || pos3Val == "") {
+    if (pos1Val === "" || pos2Val === "" || pos3Val === "") {
       isDraw = false;
     }
   }
@@ -97,9 +99,9 @@ function checkWinner() {
 }
 
 const showWinner = (winner) => {
-  msg.innerText = `Congratulation Winner is ${winner}`;
+  msg.innerText = `Congratulations! The winner is ${winner}`;
   msg.classList.remove("hide");
-gameDiv.classList.remove("hide");
+  gameDiv.classList.remove("hide");
   newGame.classList.remove("hide");
   rstGame.classList.add("hide");
   for (const names of playerNames) {
@@ -108,8 +110,8 @@ gameDiv.classList.remove("hide");
   disabledBtn();
 };
 
-const matchDraw = (draw) => {
-  msg.innerText = `Match Draw! Nobody wins`;
+const matchDraw = () => {
+  msg.innerText = "Match Draw! Nobody wins";
   msg.classList.remove("hide");
   for (const names of playerNames) {
     names.classList.add("hide");
