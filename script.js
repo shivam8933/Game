@@ -109,6 +109,9 @@ const showWinner = (winner) => {
   }
   disabledBtn();
 
+ // Remove winning-box class from all boxes
+  boxes.forEach(box => box.classList.remove('winning-box'));
+
   // Add class to winning pattern boxes
   for (const pattern of winningPattern) {
     const [pos1, pos2, pos3] = pattern;
