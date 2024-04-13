@@ -115,7 +115,7 @@ const showWinner = (winner) => {
     boxes[pos1].classList.add('winning-box');
     boxes[pos2].classList.add('winning-box');
     boxes[pos3].classList.add('winning-box');
-  }
+  } 
 };
 };
 
