@@ -117,7 +117,6 @@ const showWinner = (winner) => {
     boxes[pos3].classList.add('winning-box');
   } 
 };
-};
 
 const matchDraw = () => {
   msg.innerText = "Match Draw! Nobody wins";
