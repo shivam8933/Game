@@ -89,7 +89,7 @@ function checkWinner() {
         return;
       }
 if  (pos1Val === pos2Val && pos2Val === pos3Val) {
-  pattern.style.backgroundColor="green";
+  return pattern;
     }
     if (pos1Val == "" || pos2Val == "" || pos3Val == "") {
       isDraw = false;
