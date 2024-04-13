@@ -111,6 +111,6 @@ h1 {
   }
 
 
-.winning-box {
+.game_box.winning-box {
   background-color: green;
 }
