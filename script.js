@@ -108,6 +108,15 @@ const showWinner = (winner) => {
     names.classList.add("hide");
   }
   disabledBtn();
+
+  // Add class to winning pattern boxes
+  for (const pattern of winningPattern) {
+    const [pos1, pos2, pos3] = pattern;
+    boxes[pos1].classList.add('winning-box');
+    boxes[pos2].classList.add('winning-box');
+    boxes[pos3].classList.add('winning-box');
+  }
+};
 };
 
 const matchDraw = () => {
