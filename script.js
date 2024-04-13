@@ -88,6 +88,8 @@ function checkWinner() {
         turn(pos1Val);
         return;
       }
+if  (pos1Val === pos2Val && pos2Val === pos3Val) {
+ return pattern;
     }
     if (pos1Val == "" || pos2Val == "" || pos3Val == "") {
       isDraw = false;
